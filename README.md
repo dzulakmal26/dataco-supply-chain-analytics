@@ -29,23 +29,25 @@ While DataCo recorded **$36.78M in gross sales** and **$3.97M in net profit (10.
 
 ## 🛠️ Data Architecture & Workflow
 
-[Kaggle Raw Dataset]
-│ (180,519 Rows / 53 Columns)
-▼
+```text
+[Kaggle Raw Dataset] 
+        │ (180,519 Rows / 53 Columns)
+        ▼
 [MySQL Data Cleaning & Transformation]
-│ • Schema optimization & datetime parsing (STR_TO_DATE)
-│ • Derived operational flags (lead_time_variance_days, is_loss_making_order)
-│ • Production analytical view: vw_supply_chain_clean
-▼
+        │ • Schema optimization & datetime parsing (STR_TO_DATE)
+        │ • Derived operational flags (lead_time_variance_days, is_loss_making_order)
+        │ • Production analytical view: vw_supply_chain_clean
+        ▼
 [Batch Extraction & Power Query Ingestion]
-│ • Executed segmented batch exports (0–90k & 90k–180.5k rows)
-│ • Consolidated 180,519 records via Power Query folder integration
-▼
+        │ • Segmented batch exports (0–90k & 90k–180.5k rows)
+        │ • Consolidated 180,519 records via Power Query folder integration
+        ▼
 [DAX Semantic Modeling & KPI Engine]
-│ • Context-isolated _Measures table
-│ • Dynamic margin, OTDR, and risk loss formulas
-▼
+        │ • Context-isolated _Measures table
+        │ • Dynamic margin, OTDR, and risk loss formulas
+        ▼
 [Executive Decision Dashboard]
+```
 
 ---
 
